@@ -90,6 +90,175 @@
         <span class="symbol" aria-hidden="true">✉</span><span class="link-label">Contacto</span><span class="arrow" aria-hidden="true">↗</span>
       </a>
     </nav>
+    <!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17151f">
+  <meta name="description" content="Encuentra aquí mis redes sociales y enlaces oficiales.">
+  <title>Mis enlaces</title>
+  <style>
+    :root {
+      /* PERSONALIZA AQUÍ LOS COLORES */
+      --bg: #17151f;
+      --card: rgba(255,255,255,.075);
+      --card-hover: rgba(255,255,255,.13);
+      --text: #fbf8ff;
+      --muted: #c2bbce;
+      --accent: #d8a7ff;
+      --border: rgba(255,255,255,.13);
+    }
+    * { box-sizing: border-box; }
+    html { min-height: 100%; }
+    body {
+      margin: 0; min-height: 100vh; padding: 34px 18px 28px;
+      display: flex; justify-content: center; align-items: center;
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(ellipse at 15% 10%, rgba(133, 75, 181, .27), transparent 42%),
+        radial-gradient(ellipse at 90% 85%, rgba(72, 92, 160, .20), transparent 38%),
+        var(--bg);
+    }
+    .page { width: 100%; max-width: 460px; text-align: center; }
+    .avatar {
+      width: 112px; height: 112px; border-radius: 50%; object-fit: cover;
+      display: block; margin: 0 auto 17px; border: 3px solid rgba(255,255,255,.8);
+      box-shadow: 0 8px 32px rgba(0,0,0,.25); background: #393044;
+    }
+    h1 { font-size: clamp(1.65rem, 5vw, 2rem); margin: 0; letter-spacing: -.035em; }
+    .bio { margin: 10px auto 24px; max-width: 340px; color: var(--muted); line-height: 1.55; font-size: .97rem; }
+
+    /* BOTONES CIRCULARES EN FILA */
+    .social-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .circle-btn {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .circle-btn:hover, .circle-btn:focus-visible {
+      background: var(--card-hover);
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      outline: none;
+    }
+
+    /* MENÚ DESPLEGABLE DE INSTAGRAM */
+    .instagram-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .ig-menu {
+      display: none;
+      position: absolute;
+      top: 64px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #231d2e;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 8px;
+      width: 200px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      z-index: 10;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .ig-menu.active {
+      display: flex;
+    }
+
+    .ig-menu-item {
+      color: var(--text);
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-align: left;
+      transition: background 0.15s ease;
+    }
+
+    .ig-menu-item:hover {
+      background: var(--card-hover);
+      color: var(--accent);
+    }
+
+    footer { margin-top: 26px; color: var(--muted); font-size: .78rem; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <!-- Reemplaza la URL src por la de tu foto -->
+    <img class="avatar" src="https://placehold.co/300x300/393044/ffffff?text=TU+FOTO" alt="Foto de perfil">
+
+    <h1>Tu nombre artístico</h1>
+    <p class="bio">¡Hola! ✨ Aquí puedes encontrar mis redes sociales y contenido.</p>
+
+    <!-- Redes sociales en botones circulares -->
+    <nav class="social-row" aria-label="Redes sociales">
+      
+      <!-- Botón de Instagram con Menú Desplegable -->
+      <div class="instagram-wrapper">
+        <button class="circle-btn" id="igToggleBtn" aria-label="Desplegar Instagrams">◎</button>
+        <div class="ig-menu" id="igMenu">
+          <a class="ig-menu-item" href="https://www.instagram.com/cuenta_principal" target="_blank" rel="noopener noreferrer">📸 Principal</a>
+          <a class="ig-menu-item" href="https://www.instagram.com/cuenta_secundaria" target="_blank" rel="noopener noreferrer">🎨 Arte / Personal</a>
+          <a class="ig-menu-item" href="https://www.instagram.com/cuenta_negocio" target="_blank" rel="noopener noreferrer">💼 Tienda / Negocio</a>
+        </div>
+      </div>
+
+      <!-- Otros botones sociales -->
+      <a class="circle-btn" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">♪</a>
+      <a class="circle-btn" href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">𝕏</a>
+      <a class="circle-btn" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">▶</a>
+      <a class="circle-btn" href="mailto:tu-correo@ejemplo.com" aria-label="Contacto">✉</a>
+    </nav>
+
+    <footer>Gracias por pasar por aquí ♡</footer>
+  </main>
+
+  <script>
+    const igBtn = document.getElementById('igToggleBtn');
+    const igMenu = document.getElementById('igMenu');
+
+    // Alternar visibilidad del menú desplegable al hacer clic
+    igBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      igMenu.classList.toggle('active');
+    });
+
+    // Cerrar el menú si se hace clic fuera de él
+    document.addEventListener('click', () => {
+      igMenu.classList.remove('active');
+    });
+  </script>
+</body>
+</html>
 
     <footer>♡</footer>
   </main>
