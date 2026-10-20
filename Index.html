@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090609">
+  <meta name="description" content="Mika Veil — content creator and dream girl in pixels.">
+  <title>MIKA VEIL</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --text: #fffaff;
+      --muted: #c8c0c8;
+      --accent: #f2a8d7;
+      --panel: rgba(12, 8, 13, .88);
+    }
+    * { box-sizing: border-box; }
+    html { min-height: 100%; background: #120b12; }
+    body {
+      min-height: 100vh;
+      min-height: 100svh;
+      position: relative;
+      isolation: isolate;
+      margin: 0;
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(ellipse at 12% 8%, rgba(255, 50, 163, .50), transparent 39%),
+        radial-gradient(ellipse at 88% 80%, rgba(217, 106, 151, .42), transparent 44%),
+        linear-gradient(135deg, #d8a2ae, #281622 75%);
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      z-index: -2;
+      inset: -22px;
+      background-image: url("foto2.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      filter: blur(9px) brightness(.78);
+      transform: scale(1.04);
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      z-index: -1;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 48, 166, .35), rgba(9, 5, 10, .25) 55%, rgba(255, 133, 183, .27));
+      pointer-events: none;
+    }
+    main {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    [hidden] { display: none !important; }
+    .screen {
+      width: min(100%, 440px);
+      padding: 38px 30px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 26px;
+      background: var(--panel);
+      box-shadow: 0 22px 75px rgba(0, 0, 0, .36);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .eyebrow {
+      margin: 0 0 13px;
+      color: var(--accent);
+      font-size: .76rem;
+      font-weight: 750;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 7vw, 2.5rem);
+      line-height: 1.12;
+      font-weight: 760;
+      letter-spacing: -.035em;
+    }
+    .description {
+      max-width: 320px;
+      margin: 15px auto 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: .97rem;
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    button {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font: inherit;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+    button:active { transform: scale(.985); }
+    .yes-button {
+      color: #23131f;
+      background: linear-gradient(135deg, #ffd8ef, #d978b9);
+    }
+    .yes-button:hover { background: linear-gradient(135deg, #ffe8f5, #efa0d0); }
+    .no-button {
+      color: var(--text);
+      border-color: rgba(255, 255, 255, .27);
+      background: rgba(255, 255, 255, .045);
+    }
+    .no-button:hover { background: rgba(255, 255, 255, .12); }
+    .small-note { margin: 22px 0 0; color: #b8aeb9; font-size: .78rem; }
+    .blocked-mark {
+      width: 64px; height: 64px; display: grid; place-items: center;
+      margin: 0 auto 22px; border: 1px solid rgba(242, 168, 215, .5);
+      border-radius: 50%; color: var(--accent); font-size: 1.4rem; font-weight: 750;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="screen" id="age-gate" aria-labelledby="age-title">
+      <p class="eyebrow">Before you continue</p>
+      <h1 id="age-title">Are you 18 or older?</h1>
+      <p class="description">This website is intended for adults aged 18 and over only.</p>
+      <div class="buttons">
+        <button class="yes-button" id="yes-button" type="button">Yes, I'm 18+</button>
+        <button class="no-button" id="no-button" type="button">No</button>
+      </div>
+      <p class="small-note"> </p>
+    </section>
+
+    <section class="screen" id="blocked-page" aria-labelledby="blocked-title" hidden>
+      <div class="blocked-mark" aria-hidden="true">18+</div>
+      <h1 id="blocked-title">You can't continue</h1>
+      <p class="description">You must be at least 18 years old to view this website. You can close this tab.</p>
+    </section>
+  </main>
+
+  <script>
+    // URL de tu segunda página dentro del mismo dominio
+    const PROFILE_PAGE_URL = "perfil.html"; 
+
+    document.getElementById("yes-button").addEventListener("click", () => {
+      let destination;
+      try {
+        destination = new URL(PROFILE_PAGE_URL, window.location.href);
+      } catch (error) {
+        return;
+      }
+
+      const ua = navigator.userAgent || "";
+      const inInstagram = /Instagram/i.test(ua);
+      const isIOS = /iPhone|iPad|iPod/i.test(ua) ||
+        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+      const isAndroid = /Android/i.test(ua);
+
+      if (inInstagram && isIOS) {
+        window.location.href = "instagram://extbrowser/?url=" + encodeURIComponent(destination.href);
+        return;
+      }
+
+      if (inInstagram && isAndroid) {
+        const withoutScheme = destination.href.replace(/^https?:\/\//i, "");
+        const intentUrl = "intent://" + withoutScheme +
+          "#Intent;scheme=https;action=android.intent.action.VIEW;" +
+          "category=android.intent.category.BROWSABLE;package=com.android.chrome;" +
+          "S.browser_fallback_url=" + encodeURIComponent(destination.href) + ";end";
+        window.location.href = intentUrl;
+        return;
+      }
+
+      window.location.assign(destination.href);
+    });
+
+    document.getElementById("no-button").addEventListener("click", () => {
+      window.close();
+      document.getElementById("age-gate").hidden = true;
+      document.getElementById("blocked-page").hidden = false;
+    });
+  </script>
+</body>
+</html>
