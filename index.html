@@ -250,7 +250,7 @@
     document.getElementById("more-button").addEventListener("click", () => {
       let destination;
       try {
-        destination = new URL(DESTINATION_URL);
+        destination = new URL(miikaveil.me);
         if (destination.protocol !== "https:" && destination.protocol !== "http:") {
           throw new Error("La dirección debe comenzar con https:// o http://");
         }
