@@ -1,70 +1,109 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#100d13">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090609">
+  <meta name="description" content="Mika Veil — content creator and dream girl in pixels.">
   <title>MIKA VEIL</title>
   <style>
     :root {
       color-scheme: dark;
-      --bg: #100d13;
-      --panel: rgba(29, 23, 34, .9);
-      --text: #fff8fc;
-      --muted: #c0b4c5;
+      --text: #fffaff;
+      --muted: #c8c0c8;
       --accent: #f2a8d7;
-      --accent-deep: #d76fb5;
+      --panel: rgba(12, 8, 13, .88);
     }
 
     * { box-sizing: border-box; }
 
-    html, body { min-height: 100%; }
+    html { min-height: 100%; background: #120b12; }
 
     body {
-      margin: 0;
       min-height: 100vh;
+      min-height: 100svh;
+      position: relative;
+      isolation: isolate;
+      margin: 0;
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(ellipse at 12% 8%, rgba(255, 50, 163, .50), transparent 39%),
+        radial-gradient(ellipse at 88% 80%, rgba(217, 106, 151, .42), transparent 44%),
+        linear-gradient(135deg, #d8a2ae, #281622 75%);
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+    }
+
+    /* Add your background image in the same folder and name it foto2.jpg. */
+    body::before {
+      content: "";
+      position: fixed;
+      z-index: -2;
+      inset: -22px;
+      background-image: url("foto2.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      filter: blur(9px) brightness(.78);
+      transform: scale(1.04);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      z-index: -1;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 48, 166, .35), rgba(9, 5, 10, .25) 55%, rgba(255, 133, 183, .27));
+      pointer-events: none;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      min-height: 100vh;
+      min-height: 100svh;
       display: grid;
       place-items: center;
       padding: 24px;
-      background:
-        radial-gradient(ellipse at 18% 12%, rgba(149, 73, 133, .20), transparent 42%),
-        radial-gradient(ellipse at 85% 85%, rgba(88, 65, 132, .22), transparent 38%),
-        var(--bg);
-      color: var(--text);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
+    [hidden] { display: none !important; }
+
     .screen {
-      width: min(100%, 410px);
+      width: min(100%, 440px);
+      padding: 38px 30px;
       text-align: center;
-      padding: 38px 28px;
-      border: 1px solid rgba(255, 255, 255, .10);
-      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 26px;
       background: var(--panel);
-      box-shadow: 0 24px 80px rgba(0, 0, 0, .34);
-      backdrop-filter: blur(14px);
+      box-shadow: 0 22px 75px rgba(0, 0, 0, .36);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
     }
 
     .eyebrow {
-      margin: 0 0 12px;
+      margin: 0 0 13px;
       color: var(--accent);
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .20em;
+      font-size: .76rem;
+      font-weight: 750;
+      letter-spacing: .19em;
       text-transform: uppercase;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(1.8rem, 7vw, 2.45rem);
+      font-size: clamp(1.8rem, 7vw, 2.5rem);
       line-height: 1.12;
-      font-weight: 750;
-      letter-spacing: -.04em;
+      font-weight: 760;
+      letter-spacing: -.035em;
     }
 
     .description {
-      margin: 14px auto 0;
-      max-width: 290px;
+      max-width: 320px;
+      margin: 15px auto 0;
       color: var(--muted);
       line-height: 1.6;
       font-size: .97rem;
@@ -78,59 +117,99 @@
     }
 
     button, .more-button {
-      min-height: 48px;
+      min-height: 50px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border: 0;
-      border-radius: 999px;
       padding: 13px 20px;
+      border: 1px solid transparent;
+      border-radius: 999px;
       font: inherit;
       font-weight: 700;
       text-decoration: none;
       cursor: pointer;
-      transition: transform .18s ease, background .18s ease, border-color .18s ease;
       -webkit-tap-highlight-color: transparent;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
     }
 
-    button:active, .more-button:active { transform: scale(.98); }
-    button:focus-visible, .more-button:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+    button:active, .more-button:active { transform: scale(.985); }
+    button:focus-visible, .more-button:focus-visible { outline: 3px solid white; outline-offset: 4px; }
 
-    .yes-button, .more-button {
-      color: #251222;
-      background: linear-gradient(135deg, #ffd4eb, var(--accent-deep));
+    .yes-button {
+      color: #23131f;
+      background: linear-gradient(135deg, #ffd8ef, #d978b9);
     }
-
-    .yes-button:hover, .more-button:hover { background: linear-gradient(135deg, #ffe4f2, #e68bc6); }
+    .yes-button:hover { background: linear-gradient(135deg, #ffe8f5, #efa0d0); }
 
     .no-button {
       color: var(--text);
-      border: 1px solid rgba(255, 255, 255, .18);
+      border-color: rgba(255, 255, 255, .27);
       background: rgba(255, 255, 255, .045);
     }
-
-    .no-button:hover { background: rgba(255, 255, 255, .10); }
+    .no-button:hover { background: rgba(255, 255, 255, .12); }
 
     .small-note {
       margin: 22px 0 0;
-      color: #a99cac;
+      color: #b8aeb9;
       font-size: .78rem;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
-    [hidden] { display: none !important; }
-
-    .profile-photo-wrap {
-      position: relative;
-      width: 172px;
-      height: 172px;
-      margin: 0 auto 24px;
-      overflow: hidden;
+    .blocked-mark {
+      width: 64px;
+      height: 64px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 22px;
+      border: 1px solid rgba(242, 168, 215, .5);
       border-radius: 50%;
-      border: 3px solid rgba(242, 168, 215, .9);
-      background: linear-gradient(145deg, #39223b, #1d1830);
-      box-shadow: 0 0 0 8px rgba(242, 168, 215, .08), 0 16px 42px rgba(0, 0, 0, .28);
+      color: var(--accent);
+      font-size: 1.4rem;
+      font-weight: 750;
     }
+
+    /* Profile card: wide, flush to the bottom, with the full photo fading into black. */
+    .profile-page {
+      position: relative;
+      isolation: isolate;
+      align-self: stretch;
+      width: min(100%, 550px);
+      min-height: calc(100svh - 24px);
+      margin: 24px auto 0;
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .10);
+      border-bottom: 0;
+      border-radius: 32px 32px 0 0;
+      background: #000;
+      box-shadow: 0 20px 85px rgba(0, 0, 0, .42);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile-hero {
+      position: relative;
+      flex: 0 0 auto;
+      height: clamp(440px, 70svh, 690px);
+      min-height: 440px;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .profile-photo {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center top;
+      opacity: 0;
+      transition: opacity .25s ease;
+    }
+
+    .profile-photo.loaded { opacity: 1; }
 
     .photo-fallback {
       position: absolute;
@@ -139,126 +218,239 @@
       place-items: center;
       color: var(--accent);
       font-size: .85rem;
-      letter-spacing: .12em;
-      font-weight: 700;
+      font-weight: 750;
+      letter-spacing: .13em;
+      background: linear-gradient(145deg, #32182e, #090609 80%);
     }
 
-    .profile-photo {
-      position: relative;
+    .profile-hero::after {
+      content: "";
+      position: absolute;
       z-index: 1;
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 42%,
+        rgba(0, 0, 0, .12) 57%,
+        rgba(0, 0, 0, .68) 78%,
+        #000 100%
+      );
+      pointer-events: none;
     }
 
-    .profile-title { margin-bottom: 25px; }
+    .profile-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      margin-top: -100px;
+      padding: 0 30px max(36px, env(safe-area-inset-bottom));
+      background: #000;
+    }
+
+    .profile-title {
+      margin: 0;
+      font-size: clamp(1.65rem, 5vw, 2.05rem);
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: .075em;
+      text-transform: uppercase;
+    }
+
+    .profile-handle {
+      margin: 5px 0 0;
+      color: #b7b0b9;
+      font-size: .98rem;
+      letter-spacing: .14em;
+    }
+
+    .profile-divider {
+      width: 100%;
+      height: 1px;
+      margin: 22px auto 17px;
+      border: 0;
+      background: rgba(255, 255, 255, .72);
+    }
+
+    .profile-description {
+      margin: 0 auto;
+      max-width: 430px;
+      color: #c9c2ca;
+      font-size: .87rem;
+      line-height: 1.55;
+      letter-spacing: .11em;
+    }
+
+    .profile-subdescription {
+      display: block;
+      margin-top: 2px;
+    }
 
     .more-button {
-      width: 100%;
-      margin-top: 5px;
-      letter-spacing: .01em;
+      width: min(100%, 380px);
+      min-height: 76px;
+      margin: 43px auto 0;
+      padding: 16px 24px;
+      color: #fff;
+      border: 2px solid rgba(255, 255, 255, .73);
+      border-radius: 17px;
+      background: transparent;
+      font-size: clamp(1.2rem, 4.4vw, 1.65rem);
+      font-weight: 500;
+      letter-spacing: .015em;
+      text-transform: uppercase;
+    }
+
+    .more-button:hover {
+      color: #090609;
+      background: #fff;
+      border-color: #fff;
     }
 
     .help-note {
       display: none;
-      margin: 17px 0 0;
-      color: var(--muted);
-      font-size: .8rem;
+      margin: 17px auto 0;
+      max-width: 380px;
+      color: #d4ccd6;
+      font-size: .82rem;
       line-height: 1.55;
     }
-
     .help-note.visible { display: block; }
+    .help-note a { color: #ffd9ee; text-underline-offset: 3px; }
 
-    .blocked-mark {
-      width: 58px;
-      height: 58px;
-      display: grid;
-      place-items: center;
-      margin: 0 auto 20px;
-      border: 1px solid rgba(242, 168, 215, .4);
-      border-radius: 50%;
-      color: var(--accent);
-      font-size: 1.5rem;
+    body.profile-active {
+      display: block;
+      background-attachment: fixed;
+    }
+
+    body.profile-active main {
+      display: block;
+      min-height: 100svh;
+      padding: 24px 0 0;
+    }
+
+    @media (max-width: 600px) {
+      main { padding: 18px; }
+      .screen:not(.profile-page) { padding: 34px 24px; }
+      .profile-page {
+        width: 100%;
+        min-height: 100svh;
+        margin: 0 auto;
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0;
+      }
+      body.profile-active main { padding: 0; }
+      .profile-hero { height: clamp(440px, 68svh, 650px); }
+      .profile-content { margin-top: -90px; padding-right: 24px; padding-left: 24px; }
+      .more-button { min-height: 66px; margin-top: 34px; }
     }
 
     @media (max-width: 360px) {
-      .screen { padding: 32px 20px; }
-      .profile-photo-wrap { width: 150px; height: 150px; }
+      .profile-hero { height: 440px; }
+      .profile-content { padding-right: 18px; padding-left: 18px; }
+      .profile-description { font-size: .8rem; letter-spacing: .07em; }
+      .more-button { border-radius: 14px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
     }
   </style>
 </head>
 <body>
   <main>
     <section class="screen" id="age-gate" aria-labelledby="age-title">
-      <p class="eyebrow">Antes de continuar</p>
-      <h1 id="age-title">¿Eres mayor de edad?</h1>
-      <p class="description">Este sitio es únicamente para personas de 18 años o más.</p>
+      <p class="eyebrow">Before you continue</p>
+      <h1 id="age-title">Are you 18 or older?</h1>
+      <p class="description">This website is intended for adults aged 18 and over only.</p>
       <div class="buttons">
-        <button class="yes-button" id="yes-button" type="button">Sí</button>
+        <button class="yes-button" id="yes-button" type="button">Yes, I'm 18+</button>
         <button class="no-button" id="no-button" type="button">No</button>
       </div>
-      <p class="small-note">Al continuar, confirmas que tienes al menos 18 años.</p>
+      <p class="small-note">By continuing, you confirm that you are at least 18 years old.</p>
     </section>
 
-    <section class="screen" id="profile-page" aria-labelledby="profile-name" hidden>
-      <div class="profile-photo-wrap">
-        <div class="photo-fallback" aria-hidden="true">TU FOTO</div>
-        <img class="profile-photo" id="profile-photo" src="foto.jpg" alt="Foto de TU NOMBRE">
+    <section class="profile-page" id="profile-page" aria-labelledby="profile-name" hidden>
+      <div class="profile-hero">
+        <div class="photo-fallback" id="photo-fallback" aria-hidden="true">ADD YOUR PHOTO AS foto.jpg</div>
+        <img class="profile-photo" id="profile-photo" src="foto.jpg" alt="Mika Veil" fetchpriority="high">
       </div>
-      <p class="eyebrow">Welcome to my page</p>
-      <h1 class="profile-title" id="profile-name">TU NOMBRE</h1>
-      <button class="more-button" id="more-button" type="button">More of me ↗</button>
-      <p class="help-note" id="open-help">Si sigues dentro de Instagram, toca el menú <strong>⋯</strong> y selecciona <strong>“Abrir en navegador”</strong>.</p>
+      <div class="profile-content">
+        <h1 class="profile-title" id="profile-name">Mika Veil</h1>
+        <p class="profile-handle">@miikaveil</p>
+        <hr class="profile-divider">
+        <p class="profile-description">
+          Content creator &amp; dream girl in pixels (*´ω｀*)
+          <span class="profile-subdescription">Faceless &amp; masked content</span>
+        </p>
+        <button class="more-button" id="more-button" type="button">More of me <span aria-hidden="true">↗</span></button>
+        <p class="help-note" id="open-help" role="status">
+          If Instagram keeps you in its browser, tap the <strong>⋯</strong> menu and choose <strong>Open in external browser</strong>.
+          <br><a id="manual-link" href="https://miikaveil.me/">Continue to miikaveil.me</a>
+        </p>
+      </div>
     </section>
 
     <section class="screen" id="blocked-page" aria-labelledby="blocked-title" hidden>
       <div class="blocked-mark" aria-hidden="true">18+</div>
-      <h1 id="blocked-title">No puedes continuar</h1>
-      <p class="description">Debes ser mayor de 18 años para entrar a este sitio. Puedes cerrar esta pestaña.</p>
+      <h1 id="blocked-title">You can't continue</h1>
+      <p class="description">You must be at least 18 years old to view this website. You can close this tab.</p>
     </section>
   </main>
 
   <script>
-    /* CAMBIA ESTA URL por la dirección de tu hub de enlaces cuando la tengas. */
-    const DESTINATION_URL = "miikaveil.me";
+    // Destination website. Keep the https:// protocol so the URL is valid.
+    const DESTINATION_URL = "https://miikaveil.me/";
 
     const ageGate = document.getElementById("age-gate");
     const profilePage = document.getElementById("profile-page");
     const blockedPage = document.getElementById("blocked-page");
     const helpNote = document.getElementById("open-help");
+    const manualLink = document.getElementById("manual-link");
 
     document.getElementById("yes-button").addEventListener("click", () => {
       ageGate.hidden = true;
+      blockedPage.hidden = true;
       profilePage.hidden = false;
+      document.body.classList.add("profile-active");
+      window.scrollTo(0, 0);
     });
 
     document.getElementById("no-button").addEventListener("click", () => {
-      // El navegador normalmente solo permite cerrar con window.close() las pestañas
-      // que fueron abiertas por un script; por eso también mostramos el bloqueo.
+      // Most browsers only allow window.close() for tabs opened by a script.
       window.close();
       ageGate.hidden = true;
       profilePage.hidden = true;
       blockedPage.hidden = false;
     });
 
-    document.getElementById("profile-photo").addEventListener("error", (event) => {
-      // Si aún no has subido foto.jpg, se queda visible el marcador "TU FOTO".
-      event.currentTarget.style.display = "none";
+    const profilePhoto = document.getElementById("profile-photo");
+    const photoFallback = document.getElementById("photo-fallback");
+
+    profilePhoto.addEventListener("load", () => {
+      profilePhoto.classList.add("loaded");
+      photoFallback.hidden = true;
     });
+    profilePhoto.addEventListener("error", () => {
+      profilePhoto.classList.remove("loaded");
+      photoFallback.hidden = false;
+    });
+    if (profilePhoto.complete && profilePhoto.naturalWidth > 0) {
+      profilePhoto.classList.add("loaded");
+      photoFallback.hidden = true;
+    }
 
     document.getElementById("more-button").addEventListener("click", () => {
       let destination;
       try {
         destination = new URL(DESTINATION_URL);
-        if (destination.protocol !== "https:" && destination.protocol !== "http:") {
-          throw new Error("La dirección debe comenzar con https:// o http://");
-        }
+        if (!['https:', 'http:'].includes(destination.protocol)) throw new Error('Unsupported URL protocol');
       } catch (error) {
-        helpNote.textContent = "Primero cambia DESTINATION_URL en el código por la dirección de tu hub de enlaces. VS";
+        helpNote.innerHTML = 'The destination URL is invalid. Please use a full URL starting with <strong>https://</strong>.';
         helpNote.classList.add("visible");
         return;
       }
+      manualLink.href = destination.href;
 
       const ua = navigator.userAgent || "";
       const inInstagram = /Instagram/i.test(ua);
@@ -267,33 +459,30 @@
       const isAndroid = /Android/i.test(ua);
 
       if (inInstagram && isIOS) {
-        // Mejor intento para salir del navegador interno de Instagram en iPhone/iPad.
-        // Es un esquema privado de Instagram y podría cambiar en futuras versiones.
+        // Instagram's iOS external-browser scheme is undocumented and may change.
         window.location.href = "instagram://extbrowser/?url=" + encodeURIComponent(destination.href);
         window.setTimeout(() => {
           if (document.visibilityState === "visible") helpNote.classList.add("visible");
-        }, 1200);
+        }, 1000);
         return;
       }
 
       if (inInstagram && isAndroid) {
-        // Pide a Android abrir el destino en un navegador externo; si no puede,
-        // el sistema puede volver a la URL web mediante browser_fallback_url.
+        // Request Chrome on Android, with the normal website as a fallback.
         const withoutScheme = destination.href.replace(/^https?:\/\//i, "");
         const intentUrl = "intent://" + withoutScheme +
           "#Intent;scheme=https;action=android.intent.action.VIEW;" +
-          "category=android.intent.category.BROWSABLE;" +
+          "category=android.intent.category.BROWSABLE;package=com.android.chrome;" +
           "S.browser_fallback_url=" + encodeURIComponent(destination.href) + ";end";
         window.location.href = intentUrl;
         window.setTimeout(() => {
           if (document.visibilityState === "visible") helpNote.classList.add("visible");
-        }, 1200);
+        }, 1000);
         return;
       }
 
-      // En el resto de navegadores, abre una pestaña nueva y usa un fallback si se bloquea.
-      const newTab = window.open(destination.href, "_blank", "noopener,noreferrer");
-      if (!newTab) window.location.href = destination.href;
+      // Outside Instagram, send the visitor directly to the destination.
+      window.location.assign(destination.href);
     });
   </script>
 </body>
