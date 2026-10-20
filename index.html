@@ -3,264 +3,298 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#17151f">
-  <meta name="description" content="Encuentra aquí mis redes sociales y enlaces oficiales.">
-  <title>Mika Veil links</title>
+  <meta name="theme-color" content="#100d13">
+  <title>MIKA VEIL</title>
   <style>
     :root {
-      /* PERSONALIZA AQUÍ LOS COLORES */
-      --bg: #17151f;
-      --card: rgba(255,255,255,.075);
-      --card-hover: rgba(255,255,255,.13);
-      --text: #fbf8ff;
-      --muted: #c2bbce;
-      --accent: #d8a7ff;
-      --border: rgba(255,255,255,.13);
+      color-scheme: dark;
+      --bg: #100d13;
+      --panel: rgba(29, 23, 34, .9);
+      --text: #fff8fc;
+      --muted: #c0b4c5;
+      --accent: #f2a8d7;
+      --accent-deep: #d76fb5;
     }
+
     * { box-sizing: border-box; }
-    html { min-height: 100%; }
+
+    html, body { min-height: 100%; }
+
     body {
-      margin: 0; min-height: 100vh; padding: 34px 18px 28px;
-      display: flex; justify-content: center; align-items: center;
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background:
+        radial-gradient(ellipse at 18% 12%, rgba(149, 73, 133, .20), transparent 42%),
+        radial-gradient(ellipse at 85% 85%, rgba(88, 65, 132, .22), transparent 38%),
+        var(--bg);
       color: var(--text);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(ellipse at 15% 10%, rgba(133, 75, 181, .27), transparent 42%),
-        radial-gradient(ellipse at 90% 85%, rgba(72, 92, 160, .20), transparent 38%),
-        var(--bg);
-    }
-    .page { width: 100%; max-width: 460px; text-align: center; }
-    .avatar {
-      width: 112px; height: 112px; border-radius: 50%; object-fit: cover;
-      display: block; margin: 0 auto 17px; border: 3px solid rgba(255,255,255,.8);
-      box-shadow: 0 8px 32px rgba(0,0,0,.25); background: #393044;
-    }
-    h1 { font-size: clamp(1.65rem, 5vw, 2rem); margin: 0; letter-spacing: -.035em; }
-    .bio { margin: 10px auto 24px; max-width: 340px; color: var(--muted); line-height: 1.55; font-size: .97rem; }
-    .links { display: grid; gap: 12px; }
-    .link {
-      display: flex; align-items: center; gap: 13px; width: 100%; min-height: 60px;
-      padding: 15px 18px; border: 1px solid var(--border); border-radius: 16px;
-      background: var(--card); color: var(--text); text-decoration: none;
-      font-weight: 650; font-size: 1rem; text-align: left;
-      transition: transform .18s ease, background .18s ease, border-color .18s ease;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .link:hover, .link:focus-visible {
-      background: var(--card-hover); border-color: var(--accent); transform: translateY(-2px); outline: none;
-    }
-    .link:focus-visible { box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 35%, transparent); }
-    .symbol {
-      width: 34px; height: 34px; flex: 0 0 34px; display: grid; place-items: center;
-      border-radius: 11px; color: #21162d; background: var(--accent); font-size: 17px; font-weight: 800;
-    }
-    .link-label { flex: 1; }
-    .arrow { color: var(--muted); font-size: 1.25rem; }
-    footer { margin-top: 26px; color: var(--muted); font-size: .78rem; }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
-  </style>
-</head>
-<body>
-  <main class="page">
-    <!-- Cambia la URL de la foto por una imagen pública tuya. -->
-    <img class="avatar" src="PFP.png" alt="Foto de perfil" onerror="this.style.display='none'">
-
-    <!-- Personaliza tu nombre y descripción. -->
-    <h1>Mika Veil</h1>
-    <p class="bio">✨ Content creator & dream girl in pixels (⁠*⁠´⁠ω⁠｀⁠*⁠) ✨ Faceless & masked content</p>
-
-    <!-- Cambia cada href por el enlace correcto. Duplica un bloque <a> para añadir otro botón. -->
-    <nav class="links" aria-label="Mis enlaces">
-      <a class="link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-        <span class="symbol" aria-hidden="true">◎</span><span class="link-label">Instagram</span><span class="arrow" aria-hidden="true">↗</span>
-      </a>
-      <a class="link" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">
-        <span class="symbol" aria-hidden="true">♪</span><span class="link-label">TikTok</span><span class="arrow" aria-hidden="true">↗</span>
-      </a>
-      <a class="link" href="https://x.com/" target="_blank" rel="noopener noreferrer">
-        <span class="symbol" aria-hidden="true">𝕏</span><span class="link-label">X / Twitter</span><span class="arrow" aria-hidden="true">↗</span>
-      </a>
-      <a class="link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
-        <span class="symbol" aria-hidden="true">▶</span><span class="link-label">YouTube</span><span class="arrow" aria-hidden="true">↗</span>
-      </a>
-      <a class="link" href="https://example.com/" target="_blank" rel="noopener noreferrer">
-        <span class="symbol" aria-hidden="true">♡</span><span class="link-label">Mi contenido exclusivo</span><span class="arrow" aria-hidden="true">↗</span>
-      </a>
-      <a class="link" href="mailto:tu-correo@ejemplo.com">
-        <span class="symbol" aria-hidden="true">✉</span><span class="link-label">Contacto</span><span class="arrow" aria-hidden="true">↗</span>
-      </a>
-    </nav>
-    <!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#17151f">
-  <meta name="description" content="Encuentra aquí mis redes sociales y enlaces oficiales.">
-  <title>Mis enlaces</title>
-  <style>
-    :root {
-      /* PERSONALIZA AQUÍ LOS COLORES */
-      --bg: #17151f;
-      --card: rgba(255,255,255,.075);
-      --card-hover: rgba(255,255,255,.13);
-      --text: #fbf8ff;
-      --muted: #c2bbce;
-      --accent: #d8a7ff;
-      --border: rgba(255,255,255,.13);
-    }
-    * { box-sizing: border-box; }
-    html { min-height: 100%; }
-    body {
-      margin: 0; min-height: 100vh; padding: 34px 18px 28px;
-      display: flex; justify-content: center; align-items: center;
-      color: var(--text);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(ellipse at 15% 10%, rgba(133, 75, 181, .27), transparent 42%),
-        radial-gradient(ellipse at 90% 85%, rgba(72, 92, 160, .20), transparent 38%),
-        var(--bg);
-    }
-    .page { width: 100%; max-width: 460px; text-align: center; }
-    .avatar {
-      width: 112px; height: 112px; border-radius: 50%; object-fit: cover;
-      display: block; margin: 0 auto 17px; border: 3px solid rgba(255,255,255,.8);
-      box-shadow: 0 8px 32px rgba(0,0,0,.25); background: #393044;
-    }
-    h1 { font-size: clamp(1.65rem, 5vw, 2rem); margin: 0; letter-spacing: -.035em; }
-    .bio { margin: 10px auto 24px; max-width: 340px; color: var(--muted); line-height: 1.55; font-size: .97rem; }
-
-    /* BOTONES CIRCULARES EN FILA */
-    .social-row {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
     }
 
-    .circle-btn {
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
-      background: var(--card);
-      border: 1px solid var(--border);
-      color: var(--text);
-      display: flex;
+    .screen {
+      width: min(100%, 410px);
+      text-align: center;
+      padding: 38px 28px;
+      border: 1px solid rgba(255, 255, 255, .10);
+      border-radius: 28px;
+      background: var(--panel);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .34);
+      backdrop-filter: blur(14px);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 7vw, 2.45rem);
+      line-height: 1.12;
+      font-weight: 750;
+      letter-spacing: -.04em;
+    }
+
+    .description {
+      margin: 14px auto 0;
+      max-width: 290px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: .97rem;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    button, .more-button {
+      min-height: 48px;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      border: 0;
+      border-radius: 999px;
+      padding: 13px 20px;
+      font: inherit;
+      font-weight: 700;
       text-decoration: none;
       cursor: pointer;
       transition: transform .18s ease, background .18s ease, border-color .18s ease;
       -webkit-tap-highlight-color: transparent;
     }
 
-    .circle-btn:hover, .circle-btn:focus-visible {
-      background: var(--card-hover);
-      border-color: var(--accent);
-      transform: translateY(-3px);
-      outline: none;
+    button:active, .more-button:active { transform: scale(.98); }
+    button:focus-visible, .more-button:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+
+    .yes-button, .more-button {
+      color: #251222;
+      background: linear-gradient(135deg, #ffd4eb, var(--accent-deep));
     }
 
-    /* MENÚ DESPLEGABLE DE INSTAGRAM */
-    .instagram-wrapper {
-      position: relative;
-      display: inline-block;
-    }
+    .yes-button:hover, .more-button:hover { background: linear-gradient(135deg, #ffe4f2, #e68bc6); }
 
-    .ig-menu {
-      display: none;
-      position: absolute;
-      top: 64px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #231d2e;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 8px;
-      width: 200px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-      z-index: 10;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .ig-menu.active {
-      display: flex;
-    }
-
-    .ig-menu-item {
+    .no-button {
       color: var(--text);
-      text-decoration: none;
-      padding: 10px 12px;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-align: left;
-      transition: background 0.15s ease;
+      border: 1px solid rgba(255, 255, 255, .18);
+      background: rgba(255, 255, 255, .045);
     }
 
-    .ig-menu-item:hover {
-      background: var(--card-hover);
+    .no-button:hover { background: rgba(255, 255, 255, .10); }
+
+    .small-note {
+      margin: 22px 0 0;
+      color: #a99cac;
+      font-size: .78rem;
+      line-height: 1.5;
+    }
+
+    [hidden] { display: none !important; }
+
+    .profile-photo-wrap {
+      position: relative;
+      width: 172px;
+      height: 172px;
+      margin: 0 auto 24px;
+      overflow: hidden;
+      border-radius: 50%;
+      border: 3px solid rgba(242, 168, 215, .9);
+      background: linear-gradient(145deg, #39223b, #1d1830);
+      box-shadow: 0 0 0 8px rgba(242, 168, 215, .08), 0 16px 42px rgba(0, 0, 0, .28);
+    }
+
+    .photo-fallback {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
       color: var(--accent);
+      font-size: .85rem;
+      letter-spacing: .12em;
+      font-weight: 700;
     }
 
-    footer { margin-top: 26px; color: var(--muted); font-size: .78rem; }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
+    .profile-photo {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .profile-title { margin-bottom: 25px; }
+
+    .more-button {
+      width: 100%;
+      margin-top: 5px;
+      letter-spacing: .01em;
+    }
+
+    .help-note {
+      display: none;
+      margin: 17px 0 0;
+      color: var(--muted);
+      font-size: .8rem;
+      line-height: 1.55;
+    }
+
+    .help-note.visible { display: block; }
+
+    .blocked-mark {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 20px;
+      border: 1px solid rgba(242, 168, 215, .4);
+      border-radius: 50%;
+      color: var(--accent);
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 360px) {
+      .screen { padding: 32px 20px; }
+      .profile-photo-wrap { width: 150px; height: 150px; }
+    }
   </style>
 </head>
 <body>
-  <main class="page">
-    <!-- Reemplaza la URL src por la de tu foto -->
-    <img class="avatar" src="https://placehold.co/300x300/393044/ffffff?text=TU+FOTO" alt="Foto de perfil">
-
-    <h1>Tu nombre artístico</h1>
-    <p class="bio">¡Hola! ✨ Aquí puedes encontrar mis redes sociales y contenido.</p>
-
-    <!-- Redes sociales en botones circulares -->
-    <nav class="social-row" aria-label="Redes sociales">
-      
-      <!-- Botón de Instagram con Menú Desplegable -->
-      <div class="instagram-wrapper">
-        <button class="circle-btn" id="igToggleBtn" aria-label="Desplegar Instagrams">◎</button>
-        <div class="ig-menu" id="igMenu">
-          <a class="ig-menu-item" href="https://www.instagram.com/cuenta_principal" target="_blank" rel="noopener noreferrer">📸 Principal</a>
-          <a class="ig-menu-item" href="https://www.instagram.com/cuenta_secundaria" target="_blank" rel="noopener noreferrer">🎨 Arte / Personal</a>
-          <a class="ig-menu-item" href="https://www.instagram.com/cuenta_negocio" target="_blank" rel="noopener noreferrer">💼 Tienda / Negocio</a>
-        </div>
+  <main>
+    <section class="screen" id="age-gate" aria-labelledby="age-title">
+      <p class="eyebrow">Antes de continuar</p>
+      <h1 id="age-title">¿Eres mayor de edad?</h1>
+      <p class="description">Este sitio es únicamente para personas de 18 años o más.</p>
+      <div class="buttons">
+        <button class="yes-button" id="yes-button" type="button">Sí</button>
+        <button class="no-button" id="no-button" type="button">No</button>
       </div>
+      <p class="small-note">Al continuar, confirmas que tienes al menos 18 años.</p>
+    </section>
 
-      <!-- Otros botones sociales -->
-      <a class="circle-btn" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">♪</a>
-      <a class="circle-btn" href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">𝕏</a>
-      <a class="circle-btn" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">▶</a>
-      <a class="circle-btn" href="mailto:tu-correo@ejemplo.com" aria-label="Contacto">✉</a>
-    </nav>
+    <section class="screen" id="profile-page" aria-labelledby="profile-name" hidden>
+      <div class="profile-photo-wrap">
+        <div class="photo-fallback" aria-hidden="true">TU FOTO</div>
+        <img class="profile-photo" id="profile-photo" src="foto.jpg" alt="Foto de TU NOMBRE">
+      </div>
+      <p class="eyebrow">Welcome to my page</p>
+      <h1 class="profile-title" id="profile-name">TU NOMBRE</h1>
+      <button class="more-button" id="more-button" type="button">More of me ↗</button>
+      <p class="help-note" id="open-help">Si sigues dentro de Instagram, toca el menú <strong>⋯</strong> y selecciona <strong>“Abrir en navegador”</strong>.</p>
+    </section>
 
-    <footer>Gracias por pasar por aquí ♡</footer>
+    <section class="screen" id="blocked-page" aria-labelledby="blocked-title" hidden>
+      <div class="blocked-mark" aria-hidden="true">18+</div>
+      <h1 id="blocked-title">No puedes continuar</h1>
+      <p class="description">Debes ser mayor de 18 años para entrar a este sitio. Puedes cerrar esta pestaña.</p>
+    </section>
   </main>
 
   <script>
-    const igBtn = document.getElementById('igToggleBtn');
-    const igMenu = document.getElementById('igMenu');
+    /* CAMBIA ESTA URL por la dirección de tu hub de enlaces cuando la tengas. */
+    const DESTINATION_URL = "miikaveil.me";
 
-    // Alternar visibilidad del menú desplegable al hacer clic
-    igBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      igMenu.classList.toggle('active');
+    const ageGate = document.getElementById("age-gate");
+    const profilePage = document.getElementById("profile-page");
+    const blockedPage = document.getElementById("blocked-page");
+    const helpNote = document.getElementById("open-help");
+
+    document.getElementById("yes-button").addEventListener("click", () => {
+      ageGate.hidden = true;
+      profilePage.hidden = false;
     });
 
-    // Cerrar el menú si se hace clic fuera de él
-    document.addEventListener('click', () => {
-      igMenu.classList.remove('active');
+    document.getElementById("no-button").addEventListener("click", () => {
+      // El navegador normalmente solo permite cerrar con window.close() las pestañas
+      // que fueron abiertas por un script; por eso también mostramos el bloqueo.
+      window.close();
+      ageGate.hidden = true;
+      profilePage.hidden = true;
+      blockedPage.hidden = false;
+    });
+
+    document.getElementById("profile-photo").addEventListener("error", (event) => {
+      // Si aún no has subido foto.jpg, se queda visible el marcador "TU FOTO".
+      event.currentTarget.style.display = "none";
+    });
+
+    document.getElementById("more-button").addEventListener("click", () => {
+      let destination;
+      try {
+        destination = new URL(DESTINATION_URL);
+        if (destination.protocol !== "https:" && destination.protocol !== "http:") {
+          throw new Error("La dirección debe comenzar con https:// o http://");
+        }
+      } catch (error) {
+        helpNote.textContent = "Primero cambia DESTINATION_URL en el código por la dirección de tu hub de enlaces.";
+        helpNote.classList.add("visible");
+        return;
+      }
+
+      const ua = navigator.userAgent || "";
+      const inInstagram = /Instagram/i.test(ua);
+      const isIOS = /iPhone|iPad|iPod/i.test(ua) ||
+        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+      const isAndroid = /Android/i.test(ua);
+
+      if (inInstagram && isIOS) {
+        // Mejor intento para salir del navegador interno de Instagram en iPhone/iPad.
+        // Es un esquema privado de Instagram y podría cambiar en futuras versiones.
+        window.location.href = "instagram://extbrowser/?url=" + encodeURIComponent(destination.href);
+        window.setTimeout(() => {
+          if (document.visibilityState === "visible") helpNote.classList.add("visible");
+        }, 1200);
+        return;
+      }
+
+      if (inInstagram && isAndroid) {
+        // Pide a Android abrir el destino en un navegador externo; si no puede,
+        // el sistema puede volver a la URL web mediante browser_fallback_url.
+        const withoutScheme = destination.href.replace(/^https?:\/\//i, "");
+        const intentUrl = "intent://" + withoutScheme +
+          "#Intent;scheme=https;action=android.intent.action.VIEW;" +
+          "category=android.intent.category.BROWSABLE;" +
+          "S.browser_fallback_url=" + encodeURIComponent(destination.href) + ";end";
+        window.location.href = intentUrl;
+        window.setTimeout(() => {
+          if (document.visibilityState === "visible") helpNote.classList.add("visible");
+        }, 1200);
+        return;
+      }
+
+      // En el resto de navegadores, abre una pestaña nueva y usa un fallback si se bloquea.
+      const newTab = window.open(destination.href, "_blank", "noopener,noreferrer");
+      if (!newTab) window.location.href = destination.href;
     });
   </script>
-</body>
-</html>
-
-    <footer>♡</footer>
-  </main>
 </body>
 </html>
