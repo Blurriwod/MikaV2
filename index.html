@@ -250,12 +250,12 @@
     document.getElementById("more-button").addEventListener("click", () => {
       let destination;
       try {
-        destination = new URL(miikaveil.me);
+        destination = new URL(DESTINATION_URL);
         if (destination.protocol !== "https:" && destination.protocol !== "http:") {
           throw new Error("La dirección debe comenzar con https:// o http://");
         }
       } catch (error) {
-        helpNote.textContent = "Primero cambia DESTINATION_URL en el código por la dirección de tu hub de enlaces.";
+        helpNote.textContent = "Primero cambia DESTINATION_URL en el código por la dirección de tu hub de enlaces. VS";
         helpNote.classList.add("visible");
         return;
       }
