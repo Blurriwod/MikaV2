@@ -168,7 +168,6 @@
       font-weight: 750;
     }
 
-    /* Profile card: wide, flush to the bottom, with the full photo fading into black. */
     .profile-page {
       position: relative;
       isolation: isolate;
@@ -383,7 +382,8 @@
           Content creator &amp; dream girl in pixels (*´ω｀*)
           <span class="profile-subdescription">Faceless &amp; masked content</span>
         </p>
-        <button class="-button" id="-button" type="button">More of me</button>
+        <!-- Se le agregó el id="more-button" para que el script lo detecte -->
+        <button class="-button" id="more-button" type="button">More of me</button>
         <p class="help-note" id="open-help" role="status">
           If Instagram keeps you in its browser, tap the <strong>⋯</strong> menu and choose <strong>Open in external browser</strong>.
           <br><a id="manual-link" href="https://miikaveil.me/">Continue to miikaveil.me</a>
@@ -399,7 +399,6 @@
   </main>
 
   <script>
-    // Destination website. Keep the https:// protocol so the URL is valid.
     const DESTINATION_URL = "https://miikaveil.me/";
 
     const ageGate = document.getElementById("age-gate");
@@ -417,7 +416,6 @@
     });
 
     document.getElementById("no-button").addEventListener("click", () => {
-      // Most browsers only allow window.close() for tabs opened by a script.
       window.close();
       ageGate.hidden = true;
       profilePage.hidden = true;
@@ -459,7 +457,6 @@
       const isAndroid = /Android/i.test(ua);
 
       if (inInstagram && isIOS) {
-        // Instagram's iOS external-browser scheme is undocumented and may change.
         window.location.href = "instagram://extbrowser/?url=" + encodeURIComponent(destination.href);
         window.setTimeout(() => {
           if (document.visibilityState === "visible") helpNote.classList.add("visible");
@@ -468,7 +465,6 @@
       }
 
       if (inInstagram && isAndroid) {
-        // Request Chrome on Android, with the normal website as a fallback.
         const withoutScheme = destination.href.replace(/^https?:\/\//i, "");
         const intentUrl = "intent://" + withoutScheme +
           "#Intent;scheme=https;action=android.intent.action.VIEW;" +
@@ -481,7 +477,6 @@
         return;
       }
 
-      // Outside Instagram, send the visitor directly to the destination.
       window.location.assign(destination.href);
     });
   </script>
